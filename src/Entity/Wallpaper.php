@@ -16,5 +16,29 @@ class Wallpaper
      */
     private $id;
 
-    // add your own fields
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $filename;
+
+	/**
+	 * @ORM\Column(type="string", unique=true)
+	 */
+	private $slug;
+
+	/**
+	 * @ORM\Column(type="integer")
+	 */
+	private $width;
+
+	/**
+	 * @ORM\Column(type="integer")
+	 */
+	private $height;
+
+	/**
+	* @ORM\Column(type="text")
+	*/
+	private $description;
+
 }
