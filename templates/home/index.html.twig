@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <div class="row">
+        <h2>Top Abstract Wallpapers</h2>
+        {% include "home/_best_in_category.html.twig" with { 'images': abstract } %}
+    </div>
+
+    <div class="row">
+        <h2>Top Landscape Wallpapers</h2>
+        {% include "home/_best_in_category.html.twig" with { 'images': landscape } %}
+    </div>
+
+    <div class="row">
+        <h2>Top Nature Wallpapers</h2>
+        {% include "home/_best_in_category.html.twig" with { 'images': nature } %}
+    </div>
+
+    <div class="row">
+        <h2>Random Images</h2>
+
+
+        <div class="row">
+            {% for image in random_images %}
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="{{ asset('images/'~image) }}" class="img-thumbnail" alt="...">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
