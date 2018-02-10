@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+//use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,9 +19,10 @@ class GalleryController extends Controller {
 	/**
 	 * @Route("/gallery", name="gallery")
 	 * @param Request $request
+	 * @return Response
 	 */
 
-	public function index(Request $request)
+	public function index(Request $request): Response
 	{
 		$images = [
 			"1-nature.jpg",
@@ -48,6 +50,18 @@ class GalleryController extends Controller {
 		return $this->render("gallery/index.html.twig",[
 			'images' => $pagination
 		]);
+	}
+
+	/**
+	 * @Route("/view", name="view")
+	 */
+
+	public function details(): Response
+	{
+		$image = "1-nature.jpg";
+
+		return $this->render("gallery/details.html.twig",compact('image'));
+
 	}
 
 }

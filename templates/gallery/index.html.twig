@@ -5,8 +5,8 @@
     <div class="row">
         {% for image in images %}
             <div class="col-sm-6 col-md-4 ">
-                <a href="#">
-                    <img src="/images/{{ image }}" class="img-thumbnail" alt="...">
+                <a href="{{ path('view') }}">
+                    <img src="{{ asset('images/'~image) }}" class="img-thumbnail" alt="...">
                 </a>
             </div>
         {% endfor %}
