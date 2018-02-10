@@ -41,4 +41,90 @@ class Wallpaper
 	*/
 	private $description;
 
+	/**
+	 * @return mixed
+	 */
+	public function getId() {
+		return $this->id;
+	}
+
+	/**
+	 * @param mixed $id
+	 */
+	public function setId( $id ): void {
+		$this->id = $id;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getFilename() {
+		return $this->filename;
+	}
+
+	/**
+	 * @param mixed $filename
+	 */
+	public function setFilename( $filename ): void {
+		$this->filename = $filename;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getSlug() {
+		return $this->slug;
+	}
+
+	/**
+	 * @param mixed $slug
+	 */
+	public function setSlug( $slug ): void {
+		$this->slug = $slug;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getWidth() {
+		return $this->width;
+	}
+
+	/**
+	 * @param mixed $width
+	 */
+	public function setWidth( $width ): void {
+		$this->width = $width;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getHeight() {
+		return $this->height;
+	}
+
+	/**
+	 * @param mixed $height
+	 */
+	public function setHeight( $height ): void {
+		$this->height = $height;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getDescription() {
+		return $this->description;
+	}
+
+	/**
+	 * @param mixed $description
+	 */
+	public function setDescription( $description ): void {
+		$this->description = $description;
+	}
+
+
+
 }
