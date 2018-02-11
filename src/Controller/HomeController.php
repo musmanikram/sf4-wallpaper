@@ -23,28 +23,35 @@ class HomeController extends AbstractController {
 	public function index(): Response
 	{
 		$abstract = [
-			"1-nature.jpg",
-			"2-nature.jpg",
-			"3-nature.jpg",
-			"4-nature.jpg"
+			"abstract-background-pink.jpg",
+			"abstract-black-and-white-wave.jpg",
+			"abstract-black-multi-color-wave.jpg",
+			"abstract-blue-green.jpg",
+			"abstract-blue-line-background.jpg",
+			"abstract-red-background-pattern.jpg",
+			"abstract-shards.jpeg",
+			"abstract-swirls.jpeg",
+		];
+		$summer = [
+			"landscape-summer-beach.jpg",
+			"landscape-summer-field.jpg",
+			"landscape-summer-flowers.jpg",
+			"landscape-summer-hill.jpg",
+			"landscape-summer-mountain.png",
+			"landscape-summer-sea.jpg",
+			"landscape-summer-sky.jpg",
+		];
+		$winter = [
+			"landscape-winter-canada-lake.jpg",
+			"landscape-winter-high-tatras.jpg",
+			"landscape-winter-snow-lake.jpg",
+			"landscape-winter-snow-mountain.jpeg",
+			"landscape-winter-snow-trees.jpg",
+			"landscape-winter-snowboard-jump.jpg",
+			"landscape-winter-snowy-fisheye.png",
 		];
 
-		$landscape = [
-			"5-nature.jpg",
-			"6-nature.jpg",
-			"7-nature.jpg",
-			"11-nature.jpg",
-			"12-nature.jpg"
-		];
-
-		$nature = [
-			"13-nature.jpg",
-			"14-nature.jpg",
-			"15-nature.jpg",
-			"16-nature.jpg"
-		];
-
-		$images = array_merge($abstract, $landscape, $nature);
+		$images = array_merge($abstract, $summer, $winter);
 
 		shuffle($images);
 
@@ -53,8 +60,8 @@ class HomeController extends AbstractController {
 		return $this->render('home/index.html.twig',[
 			'random_images' => $randomImages,
 			'abstract'      => $abstract,
-			'nature'        => $nature,
-			'landscape'     => $landscape
+			'summer'        => $summer,
+			'winter'     => $winter
 		]);
 
 

@@ -25,19 +25,13 @@ class GalleryController extends Controller {
 	public function index(Request $request): Response
 	{
 		$images = [
-			"1-nature.jpg",
-			"2-nature.jpg",
-			"3-nature.jpg",
-			"4-nature.jpg",
-			"5-nature.jpg",
-			"6-nature.jpg",
-			"7-nature.jpg",
-			"11-nature.jpg",
-			"12-nature.jpg",
-			"13-nature.jpg",
-			"14-nature.jpg",
-			"15-nature.jpg",
-			"16-nature.jpg"
+			'landscape-summer-beach.jpg',
+			'landscape-summer-field.jpg',
+			'landscape-summer-flowers.jpg',
+			'landscape-summer-hill.jpg',
+			'landscape-summer-mountain.png',
+			'landscape-summer-sea.jpg',
+			'landscape-summer-sky.jpg',
 		];
 
 		$paginator  = $this->get('knp_paginator');

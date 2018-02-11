@@ -3,7 +3,6 @@
 namespace App\DataFixtures\ORM;
 
 use App\Entity\Category;
-use App\Entity\Wallpaper;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
@@ -19,6 +18,15 @@ class LoadCategoryData extends Fixture implements OrderedFixtureInterface
 		$this->addReference('category.abstract', $category);
 		$manager->persist($category);
 
+		$category = new Category();
+		$category->setName('Summer');
+		$this->addReference('category.summer', $category);
+		$manager->persist($category);
+
+		$category = new Category();
+		$category->setName('Winter');
+		$this->addReference('category.winter', $category);
+		$manager->persist($category);
 
 		$manager->flush();
 	}
