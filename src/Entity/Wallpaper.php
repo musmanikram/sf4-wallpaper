@@ -42,6 +42,27 @@ class Wallpaper
 	private $description;
 
 	/**
+	 * Many Wallpapers have one Category
+	 * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="products")
+	 * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+	 */
+	private $category;
+
+	/**
+	 * @return Category|null
+	 */
+	public function getCategory() {
+		return $this->category;
+	}
+
+	/**
+	 * @param Category $category
+	 */
+	public function setCategory(Category $category = null ): void {
+		$this->category = $category;
+	}
+
+	/**
 	 * @return mixed
 	 */
 	public function getId() {
