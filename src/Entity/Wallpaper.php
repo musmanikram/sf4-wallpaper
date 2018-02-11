@@ -146,6 +146,18 @@ class Wallpaper
 		$this->description = $description;
 	}
 
+	/**
+	 * @return string
+	 */
+	public function __toString(): string {
+		return $this->filename;
+	}
+
+	public function getImage(): string {
+		return $this->filename;
+	}
+
+
 
 
 }
