@@ -32,7 +32,25 @@ services:
       autowire: true
       class: App\Command\SetupWallpapersCommand
       arguments:
-          #- '%kernel.project_dir%'
+          - '%kernel.project_dir%'
           - "@doctrine.orm.default_entity_manager"
       tags:
           - { name: console.command }
+
+
+    app.service.local_filesystem_file_mover:
+        class: App\Service\LocalFileSystemFileMover
+        arguments: ['@filesystem']
+
+    app.service.wallpaper_file_path_helper:
+        class: App\Service\WallpaperFilePathHelper
+        arguments:
+          - '%kernel.project_dir%/../web/images/'
+
+    app.doctrine_event_listener.wallpaper_upload_listener:
+        class: App\Event\Listener\WallpaperUploadListener
+        arguments:
+          - '@app.service.local_filesystem_file_mover'
+          - '@app.service.wallpaper_file_path_helper'
+        tags:
+          - {name: doctrine.event_listener, event: prePersist}

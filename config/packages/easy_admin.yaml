@@ -16,8 +16,6 @@ easy_admin:
                 fields:
                   - {property: "file", type: "file"}
                   - "slug"
-                  - "width"
-                  - "height"
 #        # List the entity class name you want to manage
 #        - App\Entity\Product
 #        - App\Entity\Category

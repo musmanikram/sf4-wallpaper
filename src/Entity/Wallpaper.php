@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\WallpaperRepository")
@@ -43,14 +44,13 @@ class Wallpaper
 
 	/**
 	 * Many Wallpapers have one Category
-	 * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="products")
+	 * @ORM\ManyToOne(targetEntity="App\Entity\Category")
 	 * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
 	 */
 	private $category;
 
 	/**
-	 * @var string
-	 * @ORM\Column(name="file", type="string")
+	 * @var UploadedFile
 	 */
 	private $file;
 
@@ -69,16 +69,16 @@ class Wallpaper
 	}
 
 	/**
-	 * @return string
+	 * @return UploadedFile
 	 */
 	public function getFile() {
 		return $this->file;
 	}
 
 	/**
-	 * @param string $file
+	 * @param UploadedFile $file
 	 */
-	public function setFile( string $file ): void {
+	public function setFile( UploadedFile $file ): void {
 		$this->file = $file;
 	}
 
